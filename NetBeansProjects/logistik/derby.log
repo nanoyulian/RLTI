@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Mar 29 01:34:21 WIB 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-1632-84d1-000004ec35d0 
+on database directory memory:/home/nano/NetBeansProjects/logistik/testdb with class loader sun.misc.Launcher$AppClassLoader@3d4eac69 
+Loaded from file:/home/nano/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_121-8u121-b13-0ubuntu1.16.04.2-b13
+user.dir=/home/nano/NetBeansProjects/logistik
+os.name=Linux
+os.arch=amd64
+os.version=4.4.0-70-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
