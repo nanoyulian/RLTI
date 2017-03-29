@@ -20,7 +20,13 @@ public class LogistikController {
     @RequestMapping("/")
     public String index() {
        
-        return "index";
+        return "default";
+    }
+    
+    @RequestMapping("/halo")
+    public String halo() {
+       
+        return "halo";
     }
     
     @RequestMapping("/greeting")
