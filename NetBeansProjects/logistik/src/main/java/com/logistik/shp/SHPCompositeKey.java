@@ -5,15 +5,19 @@
  */
 package com.logistik.shp;
 
-import org.springframework.data.repository.CrudRepository;
+import javax.persistence.Embeddable;
 
 /**
  *
  * @author nano
  */
-
-public interface SHPRepository extends CrudRepository<SHP,String>{
-
+@Embeddable
+public class SHPCompositeKey {
   
-    
+    private String id_klas_barang;
+   
+    private String merk;
+   
+    private String tipe;
+
 }

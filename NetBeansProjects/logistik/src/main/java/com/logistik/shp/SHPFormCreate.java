@@ -1,57 +1,36 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.logistik.shp;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author nano
- * 
- * Model Class
  */
-
-// SHP table
-@Entity 
-@Table(name = "log_shp")
-public class SHP implements Serializable {
-    
-    @Id 
+public class SHPFormCreate {
+    @NotNull
     private String id_shp;
-    @Column
+    @NotNull
     private String id_klas_barang;
-    @Column
+    @NotNull
+    @Size(min=2, max=30, message = "merk size should be in the range [2...30]")
     private String merk; 
-    @Column
+     @NotNull
     private String tipe;    
-    @Column
+     @NotNull
     private Double harga;
-    @Column
+     @NotNull
+     @Size(max=10)
     private String tgl;
-    @Column
+     @NotNull
     private String ppk;
-    @Column
+     @NotNull
     private String penyedia;
-
-      
-    
-    public SHP() {
-        
-    }
-
-    public SHP(String id_shp, String id_klas_barang, String merk, String tipe, Double harga, String tgl, String ppk, String penyedia) {
-        this.id_shp = id_shp;
-        this.id_klas_barang = id_klas_barang;
-        this.merk = merk;
-        this.tipe = tipe;
-        this.harga = harga;
-        this.tgl = tgl;
-        this.ppk = ppk;
-        this.penyedia = penyedia;
-    }
 
     public String getId_shp() {
         return id_shp;
@@ -115,11 +94,5 @@ public class SHP implements Serializable {
 
     public void setPenyedia(String penyedia) {
         this.penyedia = penyedia;
-    }
-
-    
-    
-    
-    
-    
+    }    
 }

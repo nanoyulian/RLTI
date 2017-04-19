@@ -5,9 +5,16 @@
  */
 package com.logistik;
 
+import com.logistik.shp.SHP;
+import com.logistik.shp.SHPFormCreate;
+import com.logistik.shp.SHPService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -16,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class LogistikController {
+    @Autowired
+    private SHPService shpService;
     
     @RequestMapping("/")
     public String index() {
@@ -24,15 +33,32 @@ public class LogistikController {
     }
     
     @RequestMapping("/halo")
-    public String halo() {
-       
+    public String halo() {       
         return "halo";
     }
     
     @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+    public String greeting(@RequestParam(value="name", 
+                                         required=false, 
+                                         defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "greeting";
+        return "greeting"; //nama template html (page)
+    }
+    
+    @RequestMapping(value = "/shpcreate", method=RequestMethod.GET)
+    public String shpcreate(SHPFormCreate model) {
+        
+          
+        return "shpcreate";
+    }
+    
+   @RequestMapping(value = "/shpcreate", method = RequestMethod.POST)
+    public String saveSHP(@ModelAttribute SHP shp, BindingResult errors, Model model) {
+        System.out.println("Merek---------------------------------------------------");        
+        System.out.println(shp.getMerk());
+
+        return "redirect:/shpcreate";
+        // logic to process input data
     }
     
 }

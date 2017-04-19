@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+<head>
+    <title>Create SHP DATA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  
+    <div layout:fragment="content">
+        <form th:action="@{/shpcreate}"  method="post">
+            <input name="id_shp" />
+            <input name="id_klas_barang" />
+            <input name="merk" />
+            <input name="id_shp" />
+            <input name="id_klas_barang" />
+            <input name="merk" />
+            <input name="id_shp" />
+            <input name="id_klas_barang" />
+            <input name="merk" />
+            <button type="submit" value="simpan" />
+
+        </form>
+        
+       
+
+    </div>
+</body>
+</html>
